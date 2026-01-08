@@ -1,0 +1,18 @@
+{
+  "story_id": "story_03",
+  "overall_judgment": 0,
+  "analysis": [
+    {
+      "judgment": 0,
+      "analysis": "Mock: Contradiction detected (Seeing vs Blind).",
+      "status_label": "Contradict",
+      "claim": "Thorne identified the killer by seeing his reflection in a shop window"
+    },
+    {
+      "judgment": 0,
+      "analysis": "Mock: Contradiction detected (Seeing vs Blind).",
+      "status_label": "Contradict",
+      "claim": "He has 20/20 vision"
+    }
+  ]
+}

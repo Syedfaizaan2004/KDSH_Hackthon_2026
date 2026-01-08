@@ -1,0 +1,20 @@
+{
+  "story_id": "story_05",
+  "overall_judgment": 1,
+  "analysis": [
+    {
+      "judgment": 1,
+      "analysis": "Mock analysis (LLM unavailable). Assumed consistent.",
+      "status_label": "Consistent",
+      "relevant_excerpt": "",
+      "claim": "Raj learned to cook from his grandmother in India"
+    },
+    {
+      "judgment": 1,
+      "analysis": "Mock analysis (LLM unavailable). Assumed consistent.",
+      "status_label": "Consistent",
+      "relevant_excerpt": "",
+      "claim": "She taught him the secrets of masala"
+    }
+  ]
+}

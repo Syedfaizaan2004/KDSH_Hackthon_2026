@@ -1,0 +1,25 @@
+{
+  "story_id": "story_01",
+  "overall_judgment": 0,
+  "analysis": [
+    {
+      "judgment": 0,
+      "analysis": "Mock: Contradiction detected (Water vs Fire).",
+      "status_label": "Contradict",
+      "claim": "Zarathos was an expert swimmer"
+    },
+    {
+      "judgment": 1,
+      "analysis": "Mock analysis (LLM unavailable). Assumed consistent.",
+      "status_label": "Consistent",
+      "relevant_excerpt": "",
+      "claim": "He won the Olympic gold medal for the 100m freestyle"
+    },
+    {
+      "judgment": 0,
+      "analysis": "Mock: Contradiction detected (Water vs Fire).",
+      "status_label": "Contradict",
+      "claim": "He loves rain"
+    }
+  ]
+}

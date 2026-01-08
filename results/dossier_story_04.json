@@ -1,0 +1,20 @@
+{
+  "story_id": "story_04",
+  "overall_judgment": 1,
+  "analysis": [
+    {
+      "judgment": 1,
+      "analysis": "Mock analysis (LLM unavailable). Assumed consistent.",
+      "status_label": "Consistent",
+      "relevant_excerpt": "",
+      "claim": "Vance built model airplanes as a child"
+    },
+    {
+      "judgment": 1,
+      "analysis": "Mock analysis (LLM unavailable). Assumed consistent.",
+      "status_label": "Consistent",
+      "relevant_excerpt": "",
+      "claim": "He always dreamed of flying"
+    }
+  ]
+}
