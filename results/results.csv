@@ -1,7 +1,21 @@
 backstory_id,story_id,prediction,rationale_summary
-story_001_backstory,story_001,0,Contradiction detected: Mock analysis: Detected a logical conflict in the narrative based on input hash. (Evidence: Mock evidence quote derived from text.)
-story_01_backstory,story_01,0,Contradiction detected: Mock analysis: Detected a logical conflict in the narrative based on input hash. (Evidence: Mock evidence quote derived from text.)
-story_02_backstory,story_02,1,Backstory is consistent with retrieved narrative events.
-story_03_backstory,story_03,0,Contradiction detected: Mock analysis: Detected a logical conflict in the narrative based on input hash. (Evidence: Mock evidence quote derived from text.)
-story_04_backstory,story_04,1,Backstory is consistent with retrieved narrative events.
+story_001_backstory,story_001,1,Backstory is consistent with retrieved narrative events.
+story_01_backstory,story_01,1,Backstory is consistent with retrieved narrative events.
+story_02_backstory,story_02,0,Contradiction detected: Mock analysis: Detected a logical conflict in the narrative based on input hash. (Evidence: Mock evidence quote derived from text.)
+story_03_backstory,story_03,1,Backstory is consistent with retrieved narrative events.
+story_04_backstory,story_04,0,Contradiction detected: Mock analysis: Detected a logical conflict in the narrative based on input hash. (Evidence: Mock evidence quote derived from text.)
 story_05_backstory,story_05,0,Contradiction detected: Mock analysis: Detected a logical conflict in the narrative based on input hash. (Evidence: Mock evidence quote derived from text.)
+story_07_backstory,story_07,1,Backstory is consistent with retrieved narrative events.
+story_08_backstory,story_08,0,Contradiction detected: Mock analysis: Detected a logical conflict in the narrative based on input hash. (Evidence: Mock evidence quote derived from text.)
+story_09_backstory,story_09,0,Contradiction detected: Mock analysis: Detected a logical conflict in the narrative based on input hash. (Evidence: Mock evidence quote derived from text.)
+story_10_backstory,story_10,0,Contradiction detected: Mock analysis: Detected a logical conflict in the narrative based on input hash. (Evidence: Mock evidence quote derived from text.)
+story_11_backstory,story_11,0,Contradiction detected: Mock analysis: Detected a logical conflict in the narrative based on input hash. (Evidence: Mock evidence quote derived from text.)
+story_12_backstory,story_12,0,Contradiction detected: Mock analysis: Detected a logical conflict in the narrative based on input hash. (Evidence: Mock evidence quote derived from text.)
+story_13_backstory,story_13,0,Contradiction detected: Mock analysis: Detected a logical conflict in the narrative based on input hash. (Evidence: Mock evidence quote derived from text.)
+story_14_backstory,story_14,1,Backstory is consistent with retrieved narrative events.
+story_15_backstory,story_15,0,Contradiction detected: Mock analysis: Detected a logical conflict in the narrative based on input hash. (Evidence: Mock evidence quote derived from text.)
+story_16_backstory,story_16,0,Contradiction detected: Mock analysis: Detected a logical conflict in the narrative based on input hash. (Evidence: Mock evidence quote derived from text.)
+Story_17_backstory,Story_17,1,Backstory is consistent with retrieved narrative events.
+story_18_backstory,story_18,0,Contradiction detected: Mock analysis: Detected a logical conflict in the narrative based on input hash. (Evidence: Mock evidence quote derived from text.)
+story_19_backstory,story_19,0,Contradiction detected: Mock analysis: Detected a logical conflict in the narrative based on input hash. (Evidence: Mock evidence quote derived from text.)
+story_20_backstory,story_20,0,Contradiction detected: Mock analysis: Detected a logical conflict in the narrative based on input hash. (Evidence: Mock evidence quote derived from text.)

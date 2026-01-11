@@ -1,25 +1,27 @@
 {
   "story_id": "story_01",
-  "overall_judgment": 0,
+  "overall_judgment": 1,
   "analysis": [
     {
-      "judgment": 0,
-      "analysis": "Mock: Contradiction detected (Water vs Fire).",
-      "status_label": "Contradict",
-      "claim": "Zarathos was an expert swimmer"
+      "judgment": 1,
+      "analysis": "Mock analysis: The claim aligns with the retrieved context.",
+      "status_label": "Consistent",
+      "claim": "Mock Dossier:\n\nName: John Doe\n\nBackground: John was born in a small village and always dreamed of seeing the world",
+      "evidence_quote": null
     },
     {
       "judgment": 1,
-      "analysis": "Mock analysis (LLM unavailable). Assumed consistent.",
+      "analysis": "Mock analysis: The claim aligns with the retrieved context.",
       "status_label": "Consistent",
-      "relevant_excerpt": "",
-      "claim": "He won the Olympic gold medal for the 100m freestyle"
+      "claim": "He joined the merchant navy at 18",
+      "evidence_quote": null
     },
     {
-      "judgment": 0,
-      "analysis": "Mock: Contradiction detected (Water vs Fire).",
-      "status_label": "Contradict",
-      "claim": "He loves rain"
+      "judgment": 1,
+      "analysis": "Mock analysis: The claim aligns with the retrieved context.",
+      "status_label": "Consistent",
+      "claim": "Personality: Brave, curious, but sometimes reckless",
+      "evidence_quote": null
     }
   ]
 }

@@ -150,5 +150,11 @@ def _mock_response(prompt):
             "reasoning": "Mock analysis: The claim aligns with the retrieved context.",
             "evidence_quote": None
         }
+
+    # 3. Dossier Generation
+    if "generate a structured dossier" in prompt_lower:
+        return {
+            "dossier": "Mock Dossier:\n\nName: John Doe\n\nBackground: John was born in a small village and always dreamed of seeing the world. He joined the merchant navy at 18.\n\nPersonality: Brave, curious, but sometimes reckless.\n\nKey Events:\n- Left home at 18.\n- Saved a captain during a storm.\n- Discovered a lost island."
+        }
         
     return None

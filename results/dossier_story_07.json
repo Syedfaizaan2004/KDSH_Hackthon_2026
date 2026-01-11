@@ -1,13 +1,13 @@
 {
-  "story_id": "story_05",
-  "overall_judgment": 0,
+  "story_id": "story_07",
+  "overall_judgment": 1,
   "analysis": [
     {
-      "judgment": 0,
-      "analysis": "Mock analysis: Detected a logical conflict in the narrative based on input hash.",
-      "status_label": "Contradiction",
+      "judgment": 1,
+      "analysis": "Mock analysis: The claim aligns with the retrieved context.",
+      "status_label": "Consistent",
       "claim": "Mock Dossier:\n\nName: John Doe\n\nBackground: John was born in a small village and always dreamed of seeing the world",
-      "evidence_quote": "Mock evidence quote derived from text."
+      "evidence_quote": null
     },
     {
       "judgment": 1,

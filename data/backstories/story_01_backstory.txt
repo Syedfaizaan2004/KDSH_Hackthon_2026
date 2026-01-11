@@ -1,7 +1,12 @@
-Elias Morcombe grew up believing that logic was the only honest language in a dishonest world. Born to a disgraced schoolmaster in a grim London borough, he learned early that reputation could be destroyed faster than truth could defend itself. When his father died in obscurity, Elias vowed never to be powerless again.
+Mock Dossier:
 
-He apprenticed under an apothecary, where he developed a fascination with chemistry—not to heal, but to understand evidence. Blood reactions, residues, and decay fascinated him more than people ever did. Elias trusted facts because they did not lie out of pity or fear.
+Name: John Doe
 
-Yet beneath his cold precision lay a buried rage. He took private work exposing frauds and false witnesses, not for money, but for quiet revenge against a society that preferred comfortable lies. He avoided companionship, believing attachment weakened judgment.
+Background: John was born in a small village and always dreamed of seeing the world. He joined the merchant navy at 18.
 
-Elias lived alone, worked at night, and kept meticulous notebooks filled with observations no one ever read. He did not seek fame, only certainty. In a city drowning in speculation and rumor, Elias Morcombe existed to prove one thing: that truth, however delayed, always leaves a trace.
+Personality: Brave, curious, but sometimes reckless.
+
+Key Events:
+- Left home at 18.
+- Saved a captain during a storm.
+- Discovered a lost island.

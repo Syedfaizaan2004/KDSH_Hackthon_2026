@@ -1,5 +1,5 @@
 {
-  "story_id": "story_05",
+  "story_id": "story_18",
   "overall_judgment": 0,
   "analysis": [
     {
@@ -10,18 +10,18 @@
       "evidence_quote": "Mock evidence quote derived from text."
     },
     {
-      "judgment": 1,
-      "analysis": "Mock analysis: The claim aligns with the retrieved context.",
-      "status_label": "Consistent",
+      "judgment": 0,
+      "analysis": "Mock analysis: Detected a logical conflict in the narrative based on input hash.",
+      "status_label": "Contradiction",
       "claim": "He joined the merchant navy at 18",
-      "evidence_quote": null
+      "evidence_quote": "Mock evidence quote derived from text."
     },
     {
-      "judgment": 1,
-      "analysis": "Mock analysis: The claim aligns with the retrieved context.",
-      "status_label": "Consistent",
+      "judgment": 0,
+      "analysis": "Mock analysis: Detected a logical conflict in the narrative based on input hash.",
+      "status_label": "Contradiction",
       "claim": "Personality: Brave, curious, but sometimes reckless",
-      "evidence_quote": null
+      "evidence_quote": "Mock evidence quote derived from text."
     }
   ]
 }

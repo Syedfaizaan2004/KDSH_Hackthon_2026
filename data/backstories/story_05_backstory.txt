@@ -1,9 +1,12 @@
-Arthur Bellamy spent his youth delivering messages that could not be written plainly. Trained to remember routes, faces, and codes, he carried information through borders and wars without ever knowing its full meaning.
+Mock Dossier:
 
-By the time peace came, Bellamy was tired—not of danger, but of secrecy. He retired quietly, tending a small garden and pretending to be ordinary. Yet habits lingered. He still noticed shadows, still counted steps.
+Name: John Doe
 
-When one final request came—unofficial, urgent—Arthur accepted without hesitation. He believed service did not end with age, only with indifference.
+Background: John was born in a small village and always dreamed of seeing the world. He joined the merchant navy at 18.
 
-Bellamy understood that wars were not won only by generals, but by unseen messengers who ensured the right truth arrived at the right moment. He expected no medals, only closure.
+Personality: Brave, curious, but sometimes reckless.
 
-In the end, Arthur Bellamy returned to silence willingly. He had carried enough secrets. Let history remember the visible heroes, he thought. Someone had to remain forgotten—and that, too, was duty.
+Key Events:
+- Left home at 18.
+- Saved a captain during a storm.
+- Discovered a lost island.
