@@ -1,87 +1,76 @@
-# Narrative Consistency Checker - Track A
+# Narrative Consistency Checker
 
-This solution implements a **Track A** submission for the KDSH 2026 Narrative Consistency Checker. It provides a modular pipeline for verifying the consistency of a character's backstory against a long-form novel using LLM-based reasoning and Retrieval Augmented Generation (RAG).
+**Kharagpur Data Science Hackathon 2026 - Track A Submission**
 
-## Overview
-The system determines if a hypothetical backstory overlaps causally and logically with a long-form novel. It supports:
-1.  **OpenAI (Cloud)** for high-quality reasoning.
-2.  **Ollama (Local)** for privacy-preserving local execution.
-3.  **Mock Mode** for testing without any GPU or API keys.
+This submission is designed specifically for Track A, emphasizing long-context narrative reasoning, causal consistency, and reproducibility.
 
-## Structure
-- `data/novels/`: Place full novel text here.
-- `data/backstories/`: Place backstory text here. (Naming: `{story_id}_backstory.txt`)
-- `pipeline/`: Core logic modules (Ingest, Claims, Retrieval, Rationale).
-- `main.py`: **Primary Execution Script** (Robust Python Pipeline).
-- `main_pathway.py`: Alternative Pipeline using Pathway Engine (Best for Linux/Docker).
+A robust, cross-platform system designed to judge whether a hypothetical character backstory ("dossier") is globally and causally consistent with a full novel. This project implements a hybrid reasoning pipeline combining deterministic rule-based checks with optional assistive semantic analysis.
 
-## Components Implemented
+## 🚀 Key Features
 
-### 1. Data Ingestion & Chunking
-- **`chunker.py`**: Implements a sliding window chunker using `tiktoken` (Window: 500 tokens, Overlap: 50 tokens) to ensure context preservation across chunks. Handles missing dependencies gracefully.
-- **`pathway_flow.py`**: Ingests novels and backstories from the `data/` directory.
+*   **Universal Execution**: A single entry point (`run.py`) that works seamlessly on both **Windows** (via a custom Mock Pathway backend) and **Linux/macOS** (via the official Pathway library when available, with a Pathway-compatible fallback for full reproducibility).
+*   **Dynamic Dossier Generation**: Supports optional dossier generation for synthetic testing; in the official Track-A setting, externally provided hypothetical backstories are evaluated against the novel.
+*   **Hybrid Reasoning Engine**:
+    *   **Constraints Module**: Deterministic, rule-based checks for timeline violations, behavioral contradictions, and direct negations.
+    *   **LLM Analysis**: Optional LLM-assisted semantic analysis used only for explanation and edge cases.
+*   **Clean Ingestion**: Dedicated `ingest` module for robust, full-text data loading without summarization.
+*   **Transparent Output**: Produces both a summary CSV and detailed per-story JSON analysis files.
 
-### 2. Claim Extraction & Retrieval
-- **`claims.py`**: Uses LLM to extract atomic, verifiable claims from provided backstories.
-- **`retrieval.py`** / **`pathway_flow.py`**: Computes embeddings for claims and retrieves the top relevant novel excerpts using vector similarity (Cosine Similarity / KNN).
+## 🛠️ Installation
 
-### 3. Consistency Analysis
-- **`rationale.py`**: Uses LLM to analyze each claim against the retrieved chunks, determining if it is `consistent`, `contradicted`, or `neutral`.
-- **`decision.py`**: Aggregates individual claim analyses. If *any* definitive contradiction is found, the story is marked as **0 (Contradict)**. Only if all checks pass is it marked **1 (Consistent)**.
+1.  **Clone the repository**:
+    ```bash
+    git clone <repository-url>
+    cd KDSH_2026
+    ```
 
-## How to Run
+2.  **Install Dependencies**:
+    ```bash
+    pip install -r requirements.txt
+    ```
+    *(Note: On Windows, the system will automatically use the included Mock Pathway backend, so no extra steps are required.)*
 
-### 1. Configuration (LLM Modes)
-The system automatically detects the best available LLM backend in this order:
+3.  **Environment Setup**:
+    Create a `.env` file in the root directory if you plan to use the real OpenAI backend for the optional analysis layer:
+    ```
+    OPENAI_API_KEY=your_api_key_here
+    ```
 
-1.  **OpenAI (Cloud)**
-    - *Requires*: `OPENAI_API_KEY` environment variable.
-    - *Usage*: Best quality results.
+## ▶️ Usage
 
-2.  **Ollama (Local)**
-    - *Requires*: Ollama running on `localhost:11434`.
-    - *Usage*: Automatically used if `OPENAI_API_KEY` is missing.
-    - *Tip*: Ensure you have a model pulled (e.g., `ollama pull mistral`).
+Run the entire pipeline with a single command:
 
-3.  **Mock Mode (Testing)**
-    - *Requires*: Nothing.
-    - *Usage*: Automatically triggers if neither OpenAI nor Ollama is available.
-    - *Behavior*: Returns deterministic dummy data based on input hashing for pipeline verification.
-
-### 2. Execution
-
-**Option A: Windows / Python Fallback (Recommended)**
-Run the pure Python pipeline (no Pathway engine dependency):
 ```bash
-python KDSH_2026/main.py
-```
-This is the most robust method for this environment. It supports OpenAI, Ollama, and Mock modes.
-
-**Option B: Pathway Engine (Linux/WSL/Docker)**
-If you are in a Pathway-compatible environment, run the streaming pipeline:
-```bash
-python KDSH_2026/main_pathway.py
+python run.py
 ```
 
-### 3. Output
-The pipeline will generate a CSV file in:
-`KDSH_2026/results/output_results_v2.csv`
+The system will:
+1.  Detect your Operating System.
+2.  Load the appropriate backend (Real vs. Mock).
+3.  Ingest novels from `data/novels`.
+4.  (Optional) Generate dossiers into `data/backstories` for testing if none exist.
+5.  Execute the consistency checking pipeline.
+6.  Save results to the `results/` directory.
 
-The CSV contains:
-- `backstory_id`: The filename identifier of the backstory.
-- `story_id`: The identifier for the narrative (e.g., `story_01`).
-- `prediction`: `1` (Consistent) or `0` (Contradict).
-- `rationale`: A summary of the reasoning, highlighting any contradictions found.
+## 🏗️ Pipeline Architecture
 
-## Verification Data
-Five example stories are included in `data/`.
-Expected results (Mock Mode might differ based on hash):
-- story_01 (Fire Wizard): 0 (Contradict)
-- story_02 (Android): 0 (Contradict)
-- story_03 (Blind): 0 (Contradict)
-- story_04 (Pilot): 1 (Consistent)
-- story_05 (Chef): 1 (Consistent)
+1.  **Ingest**: Loads full text of novels and backstories using `pipeline/ingest.py`.
+2.  **Chunking**: Splits novels into manageable text chunks.
+3.  **Claim Extraction**: Extract atomic claims from the character dossier.
+4.  **Retrieval**: Uses KNN retrieval to find relevant novel excerpts for each claim.
+5.  **Reasoning**:
+    *   **Step A (Constraints)**: Checks for explicit contradictions (e.g., birth year > death year, "pacifist" vs "fought").
+    *   **Step B (Rationale)**: Uses assistive analysis to explain semantic consistency against retrieved evidence.
+6.  **Decision**: Aggregates all claim judgments into a final consistency score (0 or 1).
 
-## Limitations & Notes
-- **Static vs Live**: The pipeline is configured to read the `data/` directory once.
-- **Mock Data**: The provided `data/*.txt` files are small placeholders. For the actual hackathon, ensure the full 100k+ word novels are placed in `data/novels`.
+## 📂 Directory Structure
+
+*   `run.py`: Main entry point.
+*   `pipeline/`: Core logic modules.
+    *   `ingest.py`: Data loading.
+    *   `generation.py`: Optional dossier generation.
+    *   `constraints.py`: Rule-based reasoning.
+    *   `mock_pathway.py`: Windows compatibility layer.
+    *   `chunker.py`, `claims.py`, `retrieval.py`, `decision.py`: Pipeline components.
+*   `data/`: Input directory for `novels` and generated `backstories`.
+*   `results/`: Output directory for `results.csv` and distinct `dossier_*.json` files.

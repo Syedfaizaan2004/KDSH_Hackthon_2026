@@ -1,10 +1,16 @@
 import os
 import json
 import random
-from openai import OpenAI, APIConnectionError
-from dotenv import load_dotenv
-
-load_dotenv()
+try:
+    from openai import OpenAI, APIConnectionError
+except ImportError:
+    OpenAI = None
+    APIConnectionError = None
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    pass
 
 _client = None
 _mode = "unknown"

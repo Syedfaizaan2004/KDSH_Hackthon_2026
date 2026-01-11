@@ -1,9 +1,17 @@
-from . import llm_client
+from . import llm_client, constraints
 
 def analyze_consistency(claim: str, chunks: list[str]) -> dict:
     """
     Analyzes if the claim is consistent with the provided chunks.
+    Prioritizes deterministic rule-based constraints.
     """
+    # 1. Deterministic Rule-Based Check
+    rule_result = constraints.check_consistency(claim, chunks)
+    if rule_result["status"] == "contradiction":
+        # If explicit contradiction found by rules, trust it.
+        return rule_result
+
+    # 2. LLM / Mock Analysis
     # Join chunks but limit length if needed (though chunks[0-k] shouldn't be too huge)
     context = "\n---\n".join(chunks)
     

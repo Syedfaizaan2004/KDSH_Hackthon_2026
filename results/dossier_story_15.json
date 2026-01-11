@@ -4,23 +4,20 @@
   "analysis": [
     {
       "judgment": 0,
-      "analysis": "Mock analysis: Detected a logical conflict in the narrative based on input hash.",
+      "analysis": "Behavioral Contradiction detected: Claim mentions 'always' but Evidence mentions 'never'.",
       "status_label": "Contradiction",
-      "claim": "Mock Dossier:\n\nName: John Doe\n\nBackground: John was born in a small village and always dreamed of seeing the world",
-      "evidence_quote": "Mock evidence quote derived from text."
-    },
-    {
-      "judgment": 1,
-      "analysis": "Mock analysis: The claim aligns with the retrieved context.",
-      "status_label": "Consistent",
-      "claim": "He joined the merchant navy at 18",
-      "evidence_quote": null
+      "evidence_quote": "...never..."
     },
     {
       "judgment": 0,
       "analysis": "Mock analysis: Detected a logical conflict in the narrative based on input hash.",
       "status_label": "Contradiction",
-      "claim": "Personality: Brave, curious, but sometimes reckless",
+      "evidence_quote": "Mock evidence quote derived from text."
+    },
+    {
+      "judgment": 0,
+      "analysis": "Mock analysis: Detected a logical conflict in the narrative based on input hash.",
+      "status_label": "Contradiction",
       "evidence_quote": "Mock evidence quote derived from text."
     }
   ]

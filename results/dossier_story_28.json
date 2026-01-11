@@ -1,0 +1,24 @@
+{
+  "story_id": "story_28",
+  "overall_judgment": 0,
+  "analysis": [
+    {
+      "judgment": 0,
+      "analysis": "Behavioral Contradiction detected: Claim mentions 'always' but Evidence mentions 'never'.",
+      "status_label": "Contradiction",
+      "evidence_quote": "...never..."
+    },
+    {
+      "judgment": 0,
+      "analysis": "Mock analysis: Detected a logical conflict in the narrative based on input hash.",
+      "status_label": "Contradiction",
+      "evidence_quote": "Mock evidence quote derived from text."
+    },
+    {
+      "judgment": 1,
+      "analysis": "Mock analysis: The claim aligns with the retrieved context.",
+      "status_label": "Consistent",
+      "evidence_quote": null
+    }
+  ]
+}
