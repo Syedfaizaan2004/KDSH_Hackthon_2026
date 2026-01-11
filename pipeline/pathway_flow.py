@@ -131,10 +131,10 @@ def run_pathway_server(data_dir: str):
         vector=get_embedding_udf(pw.this.chunk, pw.this.story_id)
     )
 
-    # 3. Generate Backstories from Novels (Dynamic)
-    backstories = novels.select(
-        story_id=pw.this.story_id,
-        text=generate_dossier_udf(pw.this.text)
+    # 3. Process Backstories (Ingested)
+    backstories = backstories.select(
+        story_id=pw.apply(get_id, pw.this.path),
+        text=pw.this.data.decode("utf-8")
     )
 
     # Extract Claims
