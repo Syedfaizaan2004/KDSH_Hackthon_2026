@@ -3,10 +3,10 @@
   "overall_judgment": 0,
   "analysis": [
     {
-      "judgment": 0,
-      "analysis": "Behavioral Contradiction detected: Claim mentions 'always' but Evidence mentions 'never'.",
-      "status_label": "Contradiction",
-      "evidence_quote": "...never..."
+      "judgment": 1,
+      "analysis": "Mock analysis: The claim aligns with the retrieved context.",
+      "status_label": "Consistent",
+      "evidence_quote": null
     },
     {
       "judgment": 0,
@@ -15,10 +15,10 @@
       "evidence_quote": "Mock evidence quote derived from text."
     },
     {
-      "judgment": 1,
-      "analysis": "Mock analysis: The claim aligns with the retrieved context.",
-      "status_label": "Consistent",
-      "evidence_quote": null
+      "judgment": 0,
+      "analysis": "Behavioral Contradiction detected: Claim mentions 'never' but Evidence mentions 'always'.",
+      "status_label": "Contradiction",
+      "evidence_quote": "...always..."
     }
   ]
 }

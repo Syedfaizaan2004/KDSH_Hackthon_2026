@@ -132,8 +132,15 @@ def run_pathway_server(data_dir: str):
     )
 
     # 3. Process Backstories (Ingested)
+    def get_backstory_id(path):
+        import os
+        base = os.path.basename(path)
+        # Handle "story_01_backstory.txt" -> "story_01"
+        name_no_ext = os.path.splitext(base)[0]
+        return name_no_ext.replace("_backstory", "")
+
     backstories = backstories.select(
-        story_id=pw.apply(get_id, pw.this.path),
+        story_id=pw.apply(get_backstory_id, pw.this.path),
         text=pw.this.data.decode("utf-8")
     )
 
@@ -184,15 +191,17 @@ def run_pathway_server(data_dir: str):
     )
     
     output_table = final_decisions.select(
-        story_id=pw.this.story_id,
-        prediction=get_prediction(pw.this.decision_tuple),
-        rationale=get_rationale(pw.this.decision_tuple),
-        json_saved=save_json_udf(
-            pw.this.story_id,
-            get_prediction(pw.this.decision_tuple),
-            get_rationale(pw.this.decision_tuple),
-            pw.this.all_analyses
-        )
+        **{
+            "Story ID": pw.this.story_id,
+            "Prediction": get_prediction(pw.this.decision_tuple),
+            "Rationale": get_rationale(pw.this.decision_tuple),
+            "Analysis Status": save_json_udf(
+                pw.this.story_id,
+                get_prediction(pw.this.decision_tuple),
+                get_rationale(pw.this.decision_tuple),
+                pw.this.all_analyses
+            )
+        }
     )
 
     # 7. Output
